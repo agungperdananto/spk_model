@@ -9,6 +9,10 @@ install, create, activate virtual environment using virtualenv
 
 https://medium.com/analytics-vidhya/virtual-environment-6ad5d9b6af59
 
+## Install depedencies
+run
+    pip install -r requirements.txt
+
   
 
 ## create postgresql database
@@ -22,7 +26,7 @@ modify settings.py
 
 run:
 
-    python main.py create_table 
+    python main.py create_table
 
   
 
