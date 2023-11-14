@@ -59,10 +59,10 @@ class SimpleAdditiveWeighting():
 
         return [
             {
-                'developer': data['developer']/max_developer,
-                'lt': data['lt']/max_lt,
-                'lb': data['lb']/max_lb,
-                'price': min_price/data['price']
+                'developer': data['developer']/max_developer, # benefit
+                'lt': data['lt']/max_lt, # benefit
+                'lb': data['lb']/max_lb, # benefit
+                'price': min_price/data['price'] # cost
                 }
             for data in self.data
         ]
