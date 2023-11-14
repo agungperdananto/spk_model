@@ -9,7 +9,7 @@ https://medium.com/analytics-vidhya/virtual-environment-6ad5d9b6af59
 ## create table 
 run:
 ```
- python main.py create_table```
+    python main.py create_table ```
 
 ## create data
 run this query in your db client
