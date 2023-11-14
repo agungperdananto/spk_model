@@ -1,3 +1,4 @@
+import sys
 from models import Base, SportsCar, House
 from engine import engine
 
@@ -76,9 +77,19 @@ class SimpleAdditiveWeighting():
             for row in self.normalized_data
             ]
 
-saw = SimpleAdditiveWeighting()
-# {'developer': 5, 'lt': 3, 'lb': 2, 'price': 4}
+def run_saw():
+    saw = SimpleAdditiveWeighting()
+    # {'developer': 5, 'lt': 3, 'lb': 2, 'price': 4}
 
-saw.raw_weight = {'developer': 1, 'lt': 5, 'lb': 5, 'price': 1}
-print('result:', saw.final_result)
+    saw.raw_weight = {'developer': 1, 'lt': 5, 'lb': 5, 'price': 1}
+    print('result:', saw.final_result)
 
+if len(sys.argv)>1:
+    arg = sys.argv[1]
+
+    if arg == 'create_table':
+        create_table()
+    elif arg == 'saw':
+        run_saw()
+    else:
+        print('command not found')
