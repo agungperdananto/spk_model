@@ -15,7 +15,7 @@ run:
 run this query in your db client
 
 ```
-INSERT INTO public.house (developer,lb,lt,price) VALUES
+    INSERT INTO public.house (developer,lb,lt,price) VALUES
 	 ('ciputra',75,80,850),
 	 ('sinarmas',70,50,950),
 	 ('sasmita',78,82,650),
@@ -27,6 +27,6 @@ INSERT INTO public.house (developer,lb,lt,price) VALUES
 ## run SAW
 
 ```
-python main.py saw
+    python main.py saw
 ```
 
