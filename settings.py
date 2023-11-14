@@ -10,3 +10,5 @@ DEV_SCALE = {
     'sasmita': 5,
     'lippo': 6,
 }
+
+# https://github.com/agungperdananto/spk_model

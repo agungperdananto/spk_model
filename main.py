@@ -10,6 +10,7 @@ session = Session(engine)
 
 def create_table():
     Base.metadata.create_all(engine)
+    print('Database has created!')
 
 def review_data():
     query = select(SportsCar)
