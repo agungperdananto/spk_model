@@ -21,12 +21,9 @@ run this query in your db client
 	 ('sasmita',78,82,650),
 	 ('lippo',65,50,700),
 	 ('ciputra',65,70,750),
-	 ('sinarmas',120,110,1500);
-```
+	 ('sinarmas',120,110,1500);```
 
 ## run SAW
 
 ```
-    python main.py saw
-```
-
+python main.py saw```
