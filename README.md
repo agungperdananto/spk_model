@@ -26,7 +26,6 @@ INSERT INTO public.house (developer,lb,lt,price) VALUES
 
 ## run SAW
 
-
 ```
 python main.py saw
 ```
