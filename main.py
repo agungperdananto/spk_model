@@ -77,12 +77,21 @@ class SimpleAdditiveWeighting():
             for row in self.normalized_data
             ]
 
+
+class WeightedProduct():
+    pass
+
+
 def run_saw():
     saw = SimpleAdditiveWeighting()
     # {'developer': 5, 'lt': 3, 'lb': 2, 'price': 4}
 
     saw.raw_weight = {'developer': 1, 'lt': 5, 'lb': 5, 'price': 1}
     print('result:', saw.final_result)
+
+def run_wp():
+    wp = WeightedProduct()
+    pass
 
 if len(sys.argv)>1:
     arg = sys.argv[1]
@@ -91,5 +100,7 @@ if len(sys.argv)>1:
         create_table()
     elif arg == 'saw':
         run_saw()
+    elif arg =='wp':
+        run_wp()
     else:
         print('command not found')

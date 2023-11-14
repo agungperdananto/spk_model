@@ -13,6 +13,9 @@ https://medium.com/analytics-vidhya/virtual-environment-6ad5d9b6af59
 
 ## create postgresql database
 
+create database in your locals
+
+modify settings.py 
   
 
 ## create table
@@ -45,3 +48,5 @@ run this query in your db client
 ## run SAW
 
      python main.py saw
+
+https://github.com/agungperdananto/spk_model
