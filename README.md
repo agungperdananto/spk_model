@@ -10,8 +10,7 @@ install, create, activate virtual environment using virtualenv
 https://medium.com/analytics-vidhya/virtual-environment-6ad5d9b6af59
 
 ## Install depedencies
-run
-    pip install -r requirements.txt
+run `pip install -r requirements.txt`
 
   
 

@@ -12,3 +12,4 @@ DEV_SCALE = {
 }
 
 # https://github.com/agungperdananto/spk_model
+# https://github.com/agungperdananto/SimpleCart
