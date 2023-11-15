@@ -1,4 +1,6 @@
 import sys
+
+from colorama import Fore, Style
 from models import Base, SportsCar, House
 from engine import engine
 
@@ -10,7 +12,7 @@ session = Session(engine)
 
 def create_table():
     Base.metadata.create_all(engine)
-    print('Database has created!')
+    print(f'{Fore.GREEN}[Success]: {Style.RESET_ALL}Database has created!')
 
 def review_data():
     query = select(SportsCar)
