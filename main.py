@@ -24,7 +24,7 @@ def get_data():
     return [{'brand': car.brand, 'type': car.type, 'origin_country': car.country, 'top_speed': car.top_speed} for car in session.scalars(query)]
 
 
-class SimpleAdditiveWeighting():
+class BaseMethod():
 
     def __init__(self):
         # 1-5
@@ -38,7 +38,7 @@ class SimpleAdditiveWeighting():
     @property
     def data(self):
         query = select(House)
-        return [{'developer': DEV_SCALE[house.developer], 'lt': house.lt, 'lb': house.lb, 'price': house.price} for house in session.scalars(query)]
+        return [{'id': house.id, 'developer': DEV_SCALE[house.developer], 'lt': house.lt, 'lb': house.lb, 'price': house.price} for house in session.scalars(query)]
     
     @property
     def normalized_data(self):
@@ -60,7 +60,7 @@ class SimpleAdditiveWeighting():
         min_price = min(prices)
 
         return [
-            {
+            {   'id': data['id'],
                 'developer': data['developer']/max_developer, # benefit
                 'lt': data['lt']/max_lt, # benefit
                 'lb': data['lb']/max_lb, # benefit
@@ -69,29 +69,40 @@ class SimpleAdditiveWeighting():
             for data in self.data
         ]
 
+    
+
+
+class WeightedProduct(BaseMethod):
     @property
-    def final_result(self):
+    def calculate(self):
+       # calculate data and weight[WP]
+       #sorting
+       return {}
+
+class SimpleAdditiveWeighting(BaseMethod):
+    
+    @property
+    def calculate(self):
         weight = self.weight
-        return [
+        # calculate data and weight
+        result =  {row['id']:
             round(row['developer'] * weight['developer'] +
             row['lt'] * weight['lt'] +
             row['lb'] * weight['lb'] +
             row['price'] * weight['price'], 2)
             for row in self.normalized_data
-            ]
-
-
-class WeightedProduct():
-    pass
-
+        }
+        # sorting
+        return dict(sorted(result.items(), key=lambda x:x[1]))
 
 def run_saw():
     saw = SimpleAdditiveWeighting()
-    # {'developer': 5, 'lt': 3, 'lb': 2, 'price': 4}
-    print('result:', saw.final_result)
+  
+    print('result:', saw.calculate)
 
 def run_wp():
     wp = WeightedProduct()
+    print('result:', wp.calculate)
     pass
 
 if len(sys.argv)>1:
