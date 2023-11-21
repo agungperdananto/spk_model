@@ -97,7 +97,6 @@ class SimpleAdditiveWeighting(BaseMethod):
 
 def run_saw():
     saw = SimpleAdditiveWeighting()
-  
     print('result:', saw.calculate)
 
 def run_wp():
